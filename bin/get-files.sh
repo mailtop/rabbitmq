@@ -1,10 +1,29 @@
 #!/bin/bash
-
 SOURCE="https://github.com/deadtrickster/prometheus_rabbitmq_exporter/releases/download"
-RABBITMQ_VERSION="rabbitmq-3.6.14.1"
+EXPORTER_VERSION="v3.7.1.1"
+ACCEPT_VERSION="0.3.3"
+PROMETHEUS_VERSION="3.4.5"
+PROMETHEUS_COWBOY_VERSION="0.1.4"
+PROMETHEUS_HTTPD_VERSION="2.1.8"
+PROMETHEUS_PROCESS_COLLECTOR_VERSION="1.3.1"
+PROMETHEUS_RABBITMQ_EXPORTER_VERSION=$EXPORTER_VERSION
 
-curl -fsSLk -o plugins/accept-0.3.3.ez $SOURCE/$RABBITMQ_VERSION/accept-0.3.3.ez
-curl -fsSLk -o plugins/prometheus-3.4.3.ez $SOURCE/$RABBITMQ_VERSION/prometheus-3.4.3.ez
-curl -fsSLk -o plugins/prometheus_httpd-2.1.8.ez $SOURCE/$RABBITMQ_VERSION/prometheus_httpd-2.1.8.ez
-curl -fsSLk -o plugins/prometheus_process_collector-1.3.0.ez $SOURCE/$RABBITMQ_VERSION/prometheus_process_collector-1.3.0.ez
-curl -fsSLk -o plugins/prometheus_rabbitmq_exporter-v3.6.14.1.ez $SOURCE/$RABBITMQ_VERSION/prometheus_rabbitmq_exporter-v3.6.14.1.ez
+rm plugins/*.ez
+
+echo "Obtendo accept-$ACCEPT_VERSION.ez..."
+curl -fsSLk -o plugins/accept-$ACCEPT_VERSION.ez $SOURCE/$EXPORTER_VERSION/accept-$ACCEPT_VERSION.ez
+
+echo "Obtendo prometheus-$PROMETHEUS_VERSION.ez..."
+curl -fsSLk -o plugins/prometheus-$PROMETHEUS_VERSION.ez $SOURCE/$EXPORTER_VERSION/prometheus-$PROMETHEUS_VERSION.ez
+
+echo "Obtendo prometheus_cowboy-$PROMETHEUS_COWBOY_VERSION.ez..."
+curl -fsSLk -o plugins/prometheus_cowboy-$PROMETHEUS_COWBOY_VERSION.ez $SOURCE/$EXPORTER_VERSION/prometheus_cowboy-$PROMETHEUS_COWBOY_VERSION.ez
+
+echo "Obtendo prometheus_httpd-$PROMETHEUS_HTTPD_VERSION.ez..."
+curl -fsSLk -o plugins/prometheus_httpd-$PROMETHEUS_HTTPD_VERSION.ez $SOURCE/$EXPORTER_VERSION/prometheus_httpd-$PROMETHEUS_HTTPD_VERSION.ez
+
+echo "Obtendo prometheus_process_collector-$PROMETHEUS_PROCESS_COLLECTOR_VERSION.ez..."
+curl -fsSLk -o plugins/prometheus_process_collector-$PROMETHEUS_PROCESS_COLLECTOR_VERSION.ez $SOURCE/$EXPORTER_VERSION/prometheus_process_collector-$PROMETHEUS_PROCESS_COLLECTOR_VERSION.ez
+
+echo "Obtendo prometheus_rabbitmq_exporter-$PROMETHEUS_RABBITMQ_EXPORTER_VERSION.ez..."
+curl -fsSLk -o plugins/prometheus_rabbitmq_exporter-$PROMETHEUS_RABBITMQ_EXPORTER_VERSION.ez $SOURCE/$EXPORTER_VERSION/prometheus_rabbitmq_exporter-$PROMETHEUS_RABBITMQ_EXPORTER_VERSION.ez
