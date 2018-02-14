@@ -1,6 +1,6 @@
 #!/bin/bash
 SOURCE="https://github.com/deadtrickster/prometheus_rabbitmq_exporter/releases/download"
-EXPORTER_VERSION="v3.7.1.1"
+EXPORTER_VERSION="v3.7.2.1"
 ACCEPT_VERSION="0.3.3"
 PROMETHEUS_VERSION="3.4.5"
 PROMETHEUS_COWBOY_VERSION="0.1.4"
