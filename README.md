@@ -14,7 +14,7 @@
 ```bash
 make docker
 docker push mailtop/rabbitmq:latest
-docker push mailtop/rabbitmq:3.7.3
+docker push mailtop/rabbitmq:3.7.7
 ```
 
 ## Métricas

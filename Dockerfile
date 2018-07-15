@@ -1,4 +1,4 @@
-FROM rabbitmq:3.7.3-management
+FROM rabbitmq:3.7.7-management
 LABEL maintainer="Rodrigo de Avila <rodrigo.avila@mailtop.com.br>"
 
 # prometheus exporter plugin
